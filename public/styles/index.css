@@ -40,7 +40,7 @@ a {
 }
 
 .Banner {
-  background-image: url("./images/BannerBg.png");
+  background-image: url("../images/BannerBg.png");
   height: 600px;
   background-repeat: no-repeat;
   display: flex;
