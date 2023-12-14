@@ -1,5 +1,5 @@
 @font-face {
-  src: url("/public/fonts/MarkSimonsonProximaNovaCondensedBlack.otf") format("otf"), url("/public/fonts/Mark Simonson  Proxima Nova Condensed Bold Italic TheFontsMaster.com.otf"), url("/public/fonts/Mark Simonson  Proxima Nova Condensed Bold TheFontsMaster.com.otf"), url("/public/fonts/Mark Simonson  Proxima Nova Condensed Extrabold Italic TheFontsMaster.com.otf"), url("/public/fonts/Mark Simonson  Proxima Nova Condensed Light TheFontsMaster.com.otf"), url("/public/fonts/Mark Simonson  Proxima Nova Condensed Black Italic TheFontsMaster.com.otf") format("otf");
+  src: url("../fonts/MarkSimonsonProximaNovaCondensedBlack.otf") format("otf"), url("../fonts/Mark Simonson  Proxima Nova Condensed Bold Italic TheFontsMaster.com.otf"), url("../fonts/Mark Simonson  Proxima Nova Condensed Bold TheFontsMaster.com.otf"), url("../fonts/Mark Simonson  Proxima Nova Condensed Extrabold Italic TheFontsMaster.com.otf"), url("../fonts/Mark Simonson  Proxima Nova Condensed Light TheFontsMaster.com.otf"), url("../fonts/Mark Simonson  Proxima Nova Condensed Black Italic TheFontsMaster.com.otf") format("otf");
   font-family: "Nova";
 }
 body {
