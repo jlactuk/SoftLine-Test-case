@@ -1,0 +1,669 @@
+@font-face {
+  src: url("/public/fonts/MarkSimonsonProximaNovaCondensedBlack.otf") format("otf"), url("/public/fonts/Mark Simonson  Proxima Nova Condensed Bold Italic TheFontsMaster.com.otf"), url("/public/fonts/Mark Simonson  Proxima Nova Condensed Bold TheFontsMaster.com.otf"), url("/public/fonts/Mark Simonson  Proxima Nova Condensed Extrabold Italic TheFontsMaster.com.otf"), url("/public/fonts/Mark Simonson  Proxima Nova Condensed Light TheFontsMaster.com.otf"), url("/public/fonts/Mark Simonson  Proxima Nova Condensed Black Italic TheFontsMaster.com.otf") format("otf");
+  font-family: "Nova";
+}
+body {
+  font-family: Nova, "Times New Roman";
+  margin: 0;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body > * {
+  width: 1250px;
+}
+body > header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 200px;
+  gap: 10vw;
+  box-shadow: 0 2px 2px rgba(51, 51, 51, 0.6666666667) inset;
+}
+body nav {
+  display: flex;
+  gap: 20px;
+}
+body nav a {
+  border: 1px solid transparent;
+  padding: 5px;
+}
+body nav a:hover,
+body nav a:active {
+  border: 1px solid #333;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.Banner {
+  background-image: url("/public/images/BannerBg.png");
+  height: 600px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+.Banner a {
+  color: #fff;
+  font-size: 18px;
+  background-color: #B01736;
+  cursor: pointer;
+  width: fit-content;
+  padding: 18px 28px;
+  border-radius: 5px;
+}
+.Banner h1 {
+  font-size: 3em;
+  font-weight: 600;
+}
+
+.About {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 50px 75px;
+  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.6666666667);
+  text-align: center;
+  padding: 50px;
+}
+.About h2 {
+  padding: 0.5em;
+  margin: 0;
+  font-size: 32px;
+  line-height: 38.4px;
+}
+.About h2 span {
+  color: #B01736;
+}
+
+.StatisticInfo {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: max(3vw, 50px);
+  padding: 0 8vw;
+}
+.StatisticInfo article {
+  width: fit-content;
+}
+.StatisticInfo p.Number {
+  font-weight: 900;
+  font-size: 4em;
+  margin: 0;
+  color: rgba(176, 23, 54, 0.95);
+}
+.StatisticInfo p:not(.Number) {
+  width: 13em;
+}
+
+.MapSearch {
+  font-size: 2em;
+}
+.MapSearch header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-items: normal;
+  justify-content: space-around;
+  box-shadow: 0 0 3px rgba(51, 51, 51, 0.2);
+  position: relative;
+}
+.MapSearch header div {
+  display: flex;
+  gap: 20px;
+}
+.MapSearch header div button {
+  transition: 0.5s;
+}
+.MapSearch header div button.open {
+  transform: rotateX(180deg);
+}
+.MapSearch header div p {
+  font-size: 1em;
+}
+.MapSearch button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 20px 0;
+  border-bottom: 3px solid transparent;
+}
+.MapSearch .towns {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+}
+.MapSearch .towns button:hover,
+.MapSearch .towns button.active,
+.MapSearch .towns button:active {
+  color: #B01736;
+  border-bottom: 3px solid #B01736;
+}
+.MapSearch #map {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 2;
+}
+.MapSearch .ModalWindow {
+  font-size: 16px;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 3px rgba(51, 51, 51, 0.2);
+  gap: 50px;
+  padding: 20px;
+  top: 150px;
+  left: 0;
+  cursor: pointer;
+  right: 0;
+  display: none;
+}
+.MapSearch .ModalWindow article {
+  color: #444;
+}
+.MapSearch .ModalWindow article p:hover,
+.MapSearch .ModalWindow article p:active {
+  color: #B01736;
+}
+.MapSearch .ModalWindow article p:first-child {
+  font-weight: 600;
+}
+.MapSearch:has(#OpenShadowMenu.open) .ModalWindow {
+  display: flex;
+}
+
+.MainTask {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background-color: #B01736;
+  box-shadow: 0 0 4px rgba(51, 51, 51, 0.2) inset;
+  color: white;
+  position: relative;
+  height: 450px;
+  font-size: 2em;
+  text-align: center;
+}
+.MainTask h3,
+.MainTask p {
+  margin: 0;
+  padding: 0;
+}
+.MainTask h3 {
+  font-size: 1.5em;
+}
+.MainTask:before, .MainTask:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 15%;
+  bottom: 15%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.4;
+}
+.MainTask:before {
+  background-image: url("/public/images/LeftPattern.png");
+  left: 0;
+  right: 50%;
+}
+.MainTask:after {
+  width: 250px;
+  background-image: url("/public/images/RightPattern.png");
+  right: 0;
+}
+
+.Business {
+  font-size: 2.5em;
+}
+.Business h3 {
+  text-align: center;
+}
+.Business .BusinessAreas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.Business .BusinessAreas article {
+  background-image: url("/public/images/BusinessImage.png");
+  background-repeat: no-repeat;
+  height: 250px;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: end;
+}
+.Business article:hover p {
+  height: 100%;
+}
+.Business .titleCard,
+.Business p {
+  background-color: rgba(45, 54, 83, 0.4666666667);
+  padding: 0 22px;
+}
+.Business .titleCard {
+  font-size: 22px;
+  margin: 0;
+  padding: 22px;
+}
+.Business p {
+  transition: 2s;
+  font-size: 16px;
+  height: 0;
+  margin: 0;
+}
+
+.Benefits {
+  margin-top: 200px;
+  box-shadow: 0 0 3px rgba(51, 51, 51, 0.1333333333);
+  text-align: center;
+  font-size: 48px;
+  padding: 2vw;
+}
+.Benefits svg {
+  padding: 30px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1333333333);
+}
+.Benefits p {
+  font-size: 18px;
+}
+.Benefits .PacketList {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid rgba(51, 51, 51, 0.0666666667);
+  padding: 15px 0 50px 15px;
+  text-align: center;
+}
+.Benefits .PacketList article {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  align-content: end;
+}
+.Benefits .PacketList article p {
+  width: 75%;
+  display: inline-block;
+  margin: auto;
+}
+.Benefits h3:last-of-type {
+  font-size: 40px;
+}
+
+.AdditionalMotivation {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.MainColor {
+  color: #B01736;
+}
+
+.Slider .swiper {
+  display: flex;
+  overflow-x: hidden;
+}
+.Slider .swiper .swiper-wrapper {
+  display: flex;
+}
+.Slider .swiper-slide {
+  width: 100vw;
+}
+.Slider .swiper-slide img {
+  max-height: 850px;
+  display: block;
+  width: 100vw;
+  object-fit: cover;
+}
+.Slider h3 {
+  font-size: 2em;
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 1250px) {
+  body {
+    width: 100vw;
+    padding: 0;
+  }
+  body > * {
+    width: 100vw;
+  }
+  body header {
+    gap: 0;
+  }
+
+  .MapSearch .ModalWindow {
+    width: calc(100vw - 120px);
+    left: 50px;
+    right: 50px;
+  }
+  .MapSearch .Map {
+    height: auto;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scroll-snap-type: both;
+    scrollbar-color: transparent transparent;
+  }
+  .MapSearch .Map #map {
+    width: 150vw;
+  }
+
+  .Business {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  body {
+    width: 100vw;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  .About h2 {
+    font-size: 1.5em;
+  }
+
+  .StatisticInfo {
+    font-size: 16px;
+  }
+  .StatisticInfo p.Number {
+    font-size: 3em;
+  }
+
+  .Benefits .PacketList article {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  .Benefits .PacketList p {
+    width: fit-content;
+  }
+  .Benefits .PacketList svg {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 850px) {
+  body header {
+    flex-direction: column;
+  }
+  body header nav {
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .About {
+    font-size: 18px;
+    padding: 30px;
+  }
+
+  .MapSearch header {
+    padding: 0 20px;
+  }
+
+  .Benefits .PacketList {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .Benefits .PacketList article {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 28vw;
+  }
+  .Benefits .PacketList p {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  body {
+    padding-bottom: 20px;
+    font-size: 16px;
+  }
+  body header {
+    font-size: 14px;
+    height: max-content;
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+  body header img {
+    margin: 0 10px;
+  }
+  body header nav {
+    flex-wrap: wrap;
+    gap: 5px 40px;
+    padding: 0 20px;
+  }
+  body .Banner {
+    background-image: url("/public/images/BannerBgMobile.png");
+    background-size: cover;
+    height: 300px;
+    padding: 5px;
+  }
+  body .Banner h1 {
+    font-size: 28px;
+    margin-top: 0;
+  }
+  body .Banner a {
+    padding: 10px 20px;
+  }
+
+  .About {
+    margin: 40px 0;
+    font-size: 16px;
+    padding: 15px;
+  }
+  .About h2 {
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 19px;
+  }
+  .About h2 br {
+    display: none;
+  }
+
+  .StatisticInfo {
+    gap: 10px;
+    text-align: center;
+    padding: 10px;
+  }
+  .StatisticInfo article {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  .StatisticInfo p.Number {
+    font-size: 2em;
+  }
+  .StatisticInfo p:not(.Number) {
+    width: fit-content;
+  }
+
+  .MapSearch .towns {
+    font-size: 14px;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scroll-snap-type: both;
+    scrollbar-color: transparent transparent;
+  }
+  .MapSearch .towns button {
+    width: fit-content;
+  }
+
+  .MainTask {
+    font-size: 1em;
+    height: 180px;
+  }
+  .MainTask::after {
+    width: 100px;
+  }
+  .MainTask h3 {
+    font-size: 2em;
+  }
+
+  .Business {
+    font-size: 2em;
+  }
+  .Business .BusinessAreas {
+    grid-template-columns: 1fr;
+  }
+
+  .Benefits {
+    font-size: 2em;
+  }
+  .Benefits .PacketList {
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+  }
+  .Benefits .PacketList p {
+    width: min-content;
+    text-align: center;
+  }
+  .Benefits .PacketList svg {
+    padding: 15px;
+  }
+  .Benefits .AdditionalMotivation {
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+  }
+  .Benefits .AdditionalMotivation article {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  .Benefits .AdditionalMotivation p {
+    width: min-content;
+  }
+  .Benefits .AdditionalMotivation svg {
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 350px) {
+  body {
+    padding-bottom: 20px;
+    font-size: 16px;
+  }
+  body header {
+    font-size: 14px;
+    height: max-content;
+    padding: 20px 10px;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+  body header img {
+    margin: 0 10px;
+  }
+  body header nav {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  body .Banner {
+    background-image: url("/public/images/BannerBgMobile.png");
+    background-size: cover;
+    height: 300px;
+    padding: 5px;
+  }
+  body .Banner h1 {
+    font-size: 28px;
+    margin-top: 0;
+  }
+  body .Banner a {
+    padding: 10px 20px;
+  }
+
+  .About {
+    margin: 40px 0;
+    font-size: 16px;
+    padding: 15px;
+  }
+  .About h2 {
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 19px;
+  }
+  .About h2 br {
+    display: none;
+  }
+
+  .StatisticInfo {
+    gap: 10px;
+    text-align: center;
+    padding: 10px;
+  }
+  .StatisticInfo article {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  .StatisticInfo p.Number {
+    font-size: 2em;
+  }
+  .StatisticInfo p:not(.Number) {
+    width: fit-content;
+  }
+
+  .MapSearch .towns {
+    font-size: 14px;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scroll-snap-type: both;
+    scrollbar-color: transparent transparent;
+  }
+  .MapSearch .towns button {
+    width: fit-content;
+  }
+
+  .MainTask {
+    font-size: 1em;
+    height: 180px;
+  }
+  .MainTask::after {
+    width: 100px;
+  }
+  .MainTask h3 {
+    font-size: 2em;
+  }
+
+  .Business {
+    font-size: 2em;
+  }
+  .Business .BusinessAreas {
+    grid-template-columns: 1fr;
+  }
+
+  .Slider h3 {
+    font-size: 28px;
+    padding: 0 5px;
+  }
+  .Slider .swiper {
+    display: flex;
+    width: 100vw;
+    height: 100px;
+  }
+  .Slider .swiper .swiper-wrapper {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
