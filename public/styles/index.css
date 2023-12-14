@@ -40,7 +40,7 @@ a {
 }
 
 .Banner {
-  background-image: url("/public/images/BannerBg.png");
+  background-image: url("./images/BannerBg.png");
   height: 600px;
   background-repeat: no-repeat;
   display: flex;
@@ -212,13 +212,13 @@ a {
   opacity: 0.4;
 }
 .MainTask:before {
-  background-image: url("/public/images/LeftPattern.png");
+  background-image: url("./images/LeftPattern.png");
   left: 0;
   right: 50%;
 }
 .MainTask:after {
   width: 250px;
-  background-image: url("/public/images/RightPattern.png");
+  background-image: url("./images/RightPattern.png");
   right: 0;
 }
 
@@ -234,7 +234,7 @@ a {
   gap: 20px;
 }
 .Business .BusinessAreas article {
-  background-image: url("/public/images/BusinessImage.png");
+  background-image: url("./images/BusinessImage.png");
   background-repeat: no-repeat;
   height: 250px;
   display: flex;
@@ -450,7 +450,7 @@ a {
     padding: 0 20px;
   }
   body .Banner {
-    background-image: url("/public/images/BannerBgMobile.png");
+    background-image: url("./images/BannerBgMobile.png");
     background-size: cover;
     height: 300px;
     padding: 5px;
@@ -578,7 +578,7 @@ a {
     gap: 0;
   }
   body .Banner {
-    background-image: url("/public/images/BannerBgMobile.png");
+    background-image: url("./images/BannerBgMobile.png");
     background-size: cover;
     height: 300px;
     padding: 5px;
